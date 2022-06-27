@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Height</title>
+</head>
+
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .box1 {
+
+        width: 100px;
+        height: 100px;
+
+        /* no action*/
+        margin: 5px;
+        /* action inner and out height  */
+        padding: 10px;
+
+        border: 2px solid #000;
+    }
+
+    .box2 {
+
+        width: 100px;
+        height: 200px;
+    }
+
+    .box3 {
+
+        width: 100px;
+        height: 300px;
+    }
+
+    .box4 {
+
+        width: 100px;
+        height: 400px;
+    }
+
+    .box5 {
+
+        width: 100px;
+        height: 500px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box1" style="background-color: green;">Div1</div>
+        <div class="box2" style="background-color: grey;">Div2</div>
+        <div class="box3" style="background-color: blue;">Div3</div>
+        <div class="box4" style="background-color: violet;">Div4</div>
+        <div class="box5" style="background-color: brown;">Div5/div>
+        </div>
+
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+
+            $(document).ready(function () {
+                // console.log("hi")
+
+                $(".box1").click(function () {
+                    console.log("Box 1 Height = " + $(this).height());
+                    console.log("Box 1inner Height = " + $(this).innerHeight());
+                    console.log("Box 1 outter Height = " + $(this).outerHeight())
+                });
+
+                $(".box2").click(function () {
+                    console.log("Box 2 Height = " + $(this).height())
+                });
+
+                $(".box3").click(function () {
+                    console.log("Box 3 Height = " + $(this).height())
+                });
+
+                $(".box4").click(function () {
+                    console.log("Box 4 Height = " + $(this).height())
+                });
+
+                $(".box5").click(function () {
+                    console.log("Box 5 Height = " + $(this).height())
+                });
+
+            });
+        </script>
+</body>
+
+</html>

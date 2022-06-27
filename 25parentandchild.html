@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parent and Child method</title>
+
+        <style>
+
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                flex-direction: column;  
+                /*display flex ko remove chin loh*/
+            }
+
+            .container{
+                width: 900px;
+                background-color:#f4f4f4 ;
+                padding: 20px;
+
+                display: flex;
+            }
+
+            .box{
+                width: 150px;
+                height: 300px;
+                margin: 0 10px;
+            }
+
+            .square1{
+                background-color: gray;
+            }
+            .square2{
+                background-color: green;
+            }
+            .square3{
+                background-color: black;
+            }
+            .square4{
+                background-color: blue;
+            }
+            .square5{
+                background-color: brown;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Parent and children method</h1>
+            <p>This is awesome JQuery version 3.6</p>
+
+        </div>
+        
+        <div class="container">
+            <div class="box square1">Box 1</div>
+            <hr>
+            <div class="box square2">Box 2</div>
+            <hr>
+            <div class="box square3">Box 3</div>
+            <hr>
+            <div class="box square4">Box 4</div>
+            <hr>
+            <div class="box square5">Box 5</div>
+        </div>
+
+        <div>
+            <p>Hay guy! what's your plan after class.</p>
+        </div>
+
+
+
+
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+
+            $(document).ready(function(){
+
+//parent
+    //    $(".box").click(function(){
+    //        $(this).parent().css({
+    //     "background":'darkblue',
+    //     "box-shadow":"5px 5px 10px rgba(0,0,0,0.5)"
+    //          });
+    //      });
+    //       
+
+    //         //children
+    //         $(".container").click(function(){
+    //             $(this).children().css("background-color","red");
+    //         })
+
+    //         $(".container").click(function(){
+    //             $(this).children(".square3,.square4").css("background-color","red")
+    //         })
+
+
+
+    // // siblings( )
+    // $(".square1").click(function(){
+    //   $(this).siblings().css("background-color","blue")
+    // });
+
+//     $(".square1").click(function(){
+// $(this).siblings(".square4").css("background-color","green");
+//     });
+
+//     $(".square1").click(function(){
+// $(this).siblings(".square3,5").css("background-color","blue")
+//     });
+
+
+// :nth-of-type 
+// n 
+// odd 
+// even 
+//formula
+      // same kind of 
+    //   $(".square1").click(function(){
+    //   $(".box:nth-of-type(5)").css("background-color","blue")
+    //  });
+
+    //  $(".square1").click(function(){
+    //   $(".box:nth-of-type(odd)").css("background-color","blue")
+    //  });
+
+    //  $(".square1").click(function(){
+    //   $(".box:nth-of-type(even)").css("background-color","blue")
+    //  });
+
+    // $(".square1").click(function(){
+    //   $(".box:nth-of-type(3n)").css("background-color","violet")
+    //  });
+
+    //  $(".square1").click(function(){
+
+    //     //start mark ko yuu tar
+    //   $(".box:nth-of-type(2n+1)").css("background-color","violet")
+    //  });
+
+
+
+
+// :nth-child()
+//n
+//odd
+//even
+//formula
+
+// $(".square1").click(function(){
+//       $(".box:nth-child(even)").css("background-color","blue")
+//      });
+
+// $(".square1").click(function(){
+//       $(".box:nth-child(odd)").css("background-color","blue")
+//      });
+
+
+//      $(".square1").click(function(){
+//       $(".box:nth-child(5)").css("background-color","blue")
+//      });
+
+
+// $(".square1").click(function(){
+//       $(".box:nth-child(3n)").css("background-color","orange")
+//      });
+
+
+    //  $(".square1").click(function(){
+    //   $(".box:nth-child(5n+1)").css("background-color","blue")
+    //  });
+    
+     //next
+    //  $(".container").click(function(){
+    //      $(this).next().css({
+    //          "background-color":"red",
+    //          "color":"#fff"
+    //      });
+
+         $(".container").click(function(){
+             $(this).prev().css({
+                 "background-color":"green",
+                 "color":"#fff",
+                 "padding":"20px"
+             });
+         });
+    
+
+
+
+
+
+
+
+});
+
+
+        </script>
+    </body>
+    
+</html>
+
+<!-- 6FM  -->

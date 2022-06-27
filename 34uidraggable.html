@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ui dragable</title>
+        <link rel="stylesheet" href="./JQUi/jquery-ui.css">
+
+        <style>
+            body{
+                height: 100vh;
+
+                display: flex;
+
+                 justify-content: center;
+
+                 align-items: center;
+            }
+
+
+            .box{
+                width: 250px;
+                height: 150px;
+                background-color: steelblue;
+                color: #fff;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="dragme" class="box">
+                <p>Drag Me wherever you want</p>
+            </div>
+        </div>
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script src="./JQUi/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function(){
+                console.log("hey")
+
+
+                $("#dragme").draggable()
+            });
+        </script>
+    </body>
+</html>

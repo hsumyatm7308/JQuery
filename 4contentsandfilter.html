@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contents And Filters Method</title>
+</head>
+
+<body>
+
+
+    <h1>This is awesome <u>js library</u></h1>
+    <h1>Are you ready to learn JQuery</h1>
+
+    <h2>This is awesome <i>javascript library</i></h2>
+    <h2>Are you ready to learn JQuery</h2>
+
+
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        console.log("helllo");
+
+        $(document).ready(function () {
+            console.log("hi");
+
+            var gettext = $("h1").contents();
+            console.log(gettext);
+            // contents တွေက ပါဝင်တဲ့အမျိုးအစားတွေအကုန်လုံးကို array လိုမျိုး ထုတ်ပေးတာ 
+
+            gettext = $("h1").contents().text();
+            console.log(gettext);
+
+            // multi = "--,--" 
+
+            gettext = $("h1,h2").contents();
+            console.log(gettext);
+
+            gettext = $("h1,h2").contents().text();
+            console.log(gettext);
+
+
+            gettext = $("h1").contents().filter("u").text();
+            console.log(gettext);
+
+            // text ဆိုတာက print out ထုတ်ရုံ 
+            // filterက အမျိုးအစားခွဲထားတဲ့ contents ထဲက ဆွဲထုတ်ချင်တဲ့ အမျိုးအစားကို စစ်ထုတ်လိုက်တာ / text နဲ့ တွဲသုံးတဲ့အခါ Looping ပတ်သလို
+            // လိုချင်တဲ့ စာသား ထွကလာတယ် 
+
+            gettext = $("h1,h2").contents().filter("u,i,b").text();
+            console.log(gettext);
+
+
+            // html is undefined when it's used with contents 
+            gettext = $("h1").contents().html();
+            console.log(gettext);
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>

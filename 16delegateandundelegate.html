@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Delegate And Undelegate</title>
+</head>
+
+<body>
+
+
+    <h1>Hello Myanmar</h1>
+    <h2>Hello Sirilinkar</h2>
+    <button type="button" id="dlg">Delegate</button>
+    <button type="button" id="undlg">UnDelegate</button>
+    <button type="hibtn">say hi</button>
+
+    <button type="button" id="zbtn">zoom</button>
+
+
+    <hr>
+
+    <div class="container">
+        <h3>Hello Indonisa</h3>
+        <button type="button" id="dlgmebtn">delegate Me</button>
+        <button id="undlgmebtn"> Undelegate me</button>
+    </div>
+
+
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+
+        $(document).ready(function () {
+
+            // $(selector - htat mae nay yar ).delegate(selector-htate chin tae kaung,event-eg-click ,function())  
+            $("body").delegate("#dlg", "click", function () {
+                // $("h1").before("Thanks for delegate");
+                // $("h1").append("<p>Thanks for delegate</p>");
+
+                // $("h1").prepend("<p>Thanks for delegate me</p>");
+                $("h1").after("<p>Thanks for delegate </p>")
+
+
+            });
+
+            // undelegate 
+            $("#undlg").click(function () {
+                $("body").undelegate("click");
+            });
+
+            $("hibtn").click(function () {
+                console.log("Hi")
+            });
+
+
+            // e = thu nae pat that tae button ko swal yuu tar 
+            // $("#zbtn").click(function () {
+            //     $("h2").css({ fontSize: "+=10px" })
+            // })
+
+            var x = 0;
+            $("#zbtn").click(function (e) {
+                $("h2").css({ fontSize: "+=10px" });
+                // $("#zbtn").text("Zoom " + (x + 1));
+                $(this).text("Zoom " + (x + 1));
+
+                x++;
+
+                if (x === 3) {
+                    $("body").undelegate(e);
+                }
+            });
+
+
+
+            $("div").delegate("#dlgmebtn", "dblclick", function () {
+                $("h3").after("<p>delegate me after</p>")
+            });
+
+            $("#undlgmebtn").click(function () {
+                $(".container").undelegate("click");
+            })
+        });
+
+
+
+// delegate and undelegate must in same parents 
+
+        // 25DG 
+
+        // e under mar object a kone lone 
+        // this = e.target (object ta khu htal)
+    </script>
+</body>
+
+</html>

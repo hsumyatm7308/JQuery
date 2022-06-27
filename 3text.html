@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Text</title>
+</head>
+
+<body>
+
+    <h1>This is awesome <u>Libiray</u></h1>
+    <!-- <h1></h1> -->
+    <h1>Save Myanmar</h1>
+    <h1>Free Myanmar</h1>
+
+    <hr>
+
+    <h2>This is awesome <u>Libiray</u></h2>
+    <!-- <h1></h1> -->
+    <h2>Save Myanmar</h2>
+    <h2>Free Myanmar</h2>
+
+    <hr>
+
+    <h3>This is awesome <u>Libiray</u></h3>
+    <!-- <h1></h1> -->
+    <h3>Save Myanmar</h3>
+    <h3>Free Myanmar</h3>
+
+    16TXT
+
+    <hr>
+
+    <h4>This is awesome <u>Libiray</u></h4>
+    <!-- <h1></h1> -->
+    <h4>Save Myanmar</h4>
+    <h4>Free Myanmar</h4>
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        console.log("hey");
+
+        $(document).ready(function () {
+            console.log("hi");
+
+            console.log($("h1").html());
+
+
+
+            // html() to html( )
+
+
+            // var getfirsth1 = $("h1").html();
+            // $("h1").html(getfirsth1);
+            // h1 = h1 
+
+
+            // var getfirsth1 = $("h1:first").html();
+            // $("h1:last").html(getfirsth1);
+
+            var getfirsth1 = $("h1:first").html();
+            // $("h1:last").html(getfirsth1);
+
+
+            console.log(getfirsth1);
+            $("h1:last").html(getfirsth1);
+
+
+
+        })
+
+
+
+        //text
+
+        $(document).ready(function () {
+            // console.log($('h2').html());
+
+            // console.log($('h2').text());
+
+            const getfirsth2 = $('h2:first').text();
+            $('h2:last').text(getfirsth2);
+        });
+
+
+        $(document).ready(function () {
+            let getfirst3 = $('h3').html();
+            console.log(getfirst3);
+
+            $("h3").text(getfirst3);
+
+        });
+
+        $(document).ready(function () {
+            let getfirst4 = $('h4').text();
+            console.log(getfirst4);
+
+            $("h4").html(getfirst4);
+
+        });
+        // html() to text ()
+        // text() to html()
+
+    </script>
+
+
+
+
+    <!-- BCJ batch 567 - Jun 1  -->
+</body>
+
+</html>

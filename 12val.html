@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Val</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .container {
+            width: 500px;
+            background-color: #f4f4f4;
+            padding: 20px;
+
+            box-shadow: 10ps 5px 10px rgba(0, 0, 0, 0.3);
+
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        b {
+            color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form action="" method="">
+
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" id="firstname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" id="lastname" class="form-control">
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="favcolor">Fav Color</label>
+                <select name="favcolor" id="favcolor" class="form-control">
+
+                    <option selected disabled>Choose a color</option>
+                    <option value="bl">Black</option>
+                    <option value="rd">Red</option>
+                    <option value="wt">White</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="favfruits">Fav Color</label>
+                <select name="favfruits" id="favfruits" class="form-control">
+
+                    <option value="ap">Apple</option>
+                    <option value="or">Orange</option>
+                    <option value="mg">Mango</option>
+                    <option value="pch">Peach</option>
+                </select>
+            </div>
+
+        </form>
+        <hr>
+        <h1>Result</h1>
+        <table>
+            <tr>
+                <td id="firstnamerst"></td>
+            </tr>
+            <tr>
+                <td id="lastnamerst"></td>
+            </tr>
+            <tr>
+                <td id="favcolorrst"></td>
+            </tr>
+            <tr>
+                <td id="favfruitsrst"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+
+        $(document).ready(function () {
+            function showresult() {
+                var getfirstname = $("#firstname").val(),
+                    getlastname = $("#lastname").val(),
+                    getfavcolor = $("#favcolor").val(),
+                    getfavfruits = $("#favfruits").val();
+
+                // console.log(getfirstname);
+                // console.log(getlastname);
+                // console.log(getfavfruits);
+                // console.log(getfavcolor);
+
+
+
+                $("#firstnamerst").html("<b>First Name</b> " + getfirstname);
+                $("#lastnamerst").html("<b>Last Name</b> " + getlastname);
+                $("#favcolorrst").html("<b> Fav Color</b> " + getfavcolor);
+                $("#favfruitsrst").html("<b>Fav Fruit: </b>" + getfavfruits)
+            }
+
+            // showresult();
+            // $("#firstname").change(showresult);
+            // $("#lastname").change(showresult);
+            // $("#favcolor").change(showresult);
+            // $("#favfruits").change(showresult);
+
+
+            // $(".form-control").change(showresult);
+
+            $("input").change(showresult);
+            $("select").change(showresult);
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event And Odd</title>
+        <style>
+
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+               
+            }
+
+            .container{
+                width: 900px;
+                background-color: #f4f4f4;
+                padding: 20px;
+
+                display: flex;
+
+            }
+
+            .box{
+                width: 150px;
+                height: 300px;
+
+                margin: 0 20px;
+            }
+
+            .square1{
+                background-color: green;
+            }
+            .square2{
+                background-color: brown;
+            }
+            .square3{
+                background-color: blue;
+            }
+            .square4{
+                background-color: yellow;
+            }
+            .square5{
+                background-color: grey;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="box square1">Div1,index 0</div>
+            <hr>
+            <div class="box square2">Div2,index 1</div>
+            <hr>
+            <div class="box square3">Div3,index 2</div>
+            <hr>
+            <div class="box square4">Div4,index 3</div>
+            <hr>
+            <div class="box square5">Div5,index 4</div>
+
+        </div>
+
+
+
+        <button id="evnbtn">Even</button>
+        <button id="oddbtn">Odd</button>
+        <button id="slcbtn">Slice</button>
+        
+
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+
+            $(document).ready(function(){
+        //   console.log('hey')
+
+        // the indext number starts 0 
+
+        //even
+        $("#evnbtn").click(function(){
+            $(".box").even().css("background-color","black")
+        });
+
+
+        // odd 
+        $("#oddbtn").click(function(){
+            $(".box").odd().css("background-color","grey")
+        });
+        
+
+
+        // slice (start,stop)
+        // $("#slcbtn").click(function(){
+        //     $(".box").slice(1,4).css("background-color","grey")
+
+        // });
+
+
+        
+
+        // pyaung pyan so yin indext number -1 ka start tl 
+
+        $("#slcbtn").click(function(){
+            $(".box").slice(-5,-2).css("background-color","grey")
+
+        });
+
+
+            });
+        </script>
+    </body>
+</html>

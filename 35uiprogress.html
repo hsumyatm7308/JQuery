@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Progress</title>
+        <link rel="stylesheet" href="./JQUi/jquery-ui.css">
+
+        <style>
+
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+                width: 700px;
+            }
+
+            #propgress2{
+                position: relative;
+
+            }
+
+            .progresslable{
+                
+                position: absolute;
+                left: 50%;
+                top:50%;
+
+                transform: translate(-50%,-50%);
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>HTML</h1>
+            <div id="propgress1">
+
+            </div>
+
+            <h1>CSS</h1>
+            <div id="propgress2"><span class="progresslable">20%</span></div> 
+
+            <h1>jQuery</h1>
+            <div id="propgress3">
+               
+            </div>
+
+            <h1>javascript</h1>
+            <div id="propgress4">
+
+            </div>
+
+            <h1>Boostrap</h1>
+            <div id="propgress5">
+
+            </div>
+        </div>
+
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script src="./JQUi/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function(){
+                // console.log("hey")
+
+                $("#propgress1").progressbar({
+                    value:70
+                }).css("background","red");
+                 
+                $("#propgress2").progressbar({
+                    value:30
+                });
+                 
+
+                $("#propgress3").progressbar({
+                    value:80
+                });
+
+                // div ka ui htal ka div ko swal khaw htar tar 
+                $("#propgress3 > div").css("background-color","steelblue");
+                 
+                $("#propgress4").css({
+                    "background-color":"green"
+                }).progressbar({
+                    value:50
+                });
+
+                $("#propgress4").css({
+                    "height":"20px",
+                    "background-color":"#e2e2e2"
+                })
+
+                $("#propgress4 > div").css("background-color","skyblue");
+
+                 
+                $("#propgress5").progressbar({
+                    value:45
+                }).css({
+                    // "background":"linear-gradient(silver,grey)"
+                    "background-image":"url('./img/arrow.png')",
+                    "background-size":"50px",
+                    "background-repeat":"repeat-x",
+                    "background-position":"center"
+                });
+
+                $("#propgress5 > div").css("background-color","skyblue");
+
+                 
+            });
+        </script>
+    </body>
+</html>
+
+<!-- 21PG  -->

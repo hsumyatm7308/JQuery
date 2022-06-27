@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Input Event Method</title>
+
+    <style>
+        body {
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 500px;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .form-group {
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" id="firstname" class="font-control" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" id="lastname" class="font-control" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select name="country" id="country">
+                    <option value="th">Thailand</option>
+                    <option value="mm">Myanmar</option>
+                    <option value="en">England</option>
+                    <option value="pl">Polan</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age" class="font-control" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="number" name="phone" id="phone" class="font-control" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="nrc">Phone</label>
+                <input type="text" name="nrc" id="nrc" class="font-control" autocomplete="off">
+            </div>
+
+            <button>Submit</button>
+        </form>
+    </div>
+
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            console.log("hie");
+
+            //blur()
+
+            // $("#firstname").blur(function () {
+            //     console.log('fist name is working by blur');
+            // });
+
+            // စာရေးရေးမရေး နှပ်လိုက်တာနဲ  အလုပ်လုပ်မှာ
+
+            // change (စာရေးပြီး တစ်ခုခုနှနပ်မှ ချိန်း)
+            // $("#firstname").change(function () {
+            //     console.log("it's change");
+            // });
+
+            //focus (ကာဆာချတာနဲ့ အလုပ်လုပ်)
+            // $("#firstname").focus(function () {
+            //     console.log("it is focus");
+            // });
+
+            //focusin (ကာဆာချ တာနဲ့ အလုပ်လုပ်)
+            // $("#firstname").focusin(function () {
+            //     console.log("it is focus in");
+            // });
+
+            //focusout  (ကာဆာ ချပြီး ထွက်လိုက်မှ အလုပ်လို့)
+            // $("#lastname").focusout(function () {
+            //     console.log("it is focus out");
+            // });
+
+            //select
+            // $("input").select(function () {
+            //     console.log("it's select method");
+            // });
+
+            //change (ရွေးပြီးသားကို ပြန်ရွေးရင် မရဘူး)
+            // $("select").change(function () {
+            //     console.log("you chnged new country");
+            // });
+
+            //keydown (Inpect ကို ထိတာနဲ့ အဖြေထွက်)
+            // var q = 0;
+            // $("#age").keydown(function () {
+            //     console.log("ths is key down");
+            //     console.log(q += 1)
+            // });
+
+
+            //keypress
+            // let x = 0;
+            // $("#phone").keypress(function () {
+            //     console.log(x++);
+            // });
+
+            //keyup (ဖိချပြီး လွတ်လိုက်မှ အလုပ်လုပ်တယ်)
+            // let y = 1;
+            // $("#nrc").keyup(function () {
+            //     console.log("nrc is working by keyup");
+            //     console.log(y += 2);
+            // });
+
+            //submit
+            $("form").submit(function (e) {
+                console.log("form smit");
+
+                //  reload မဖြစ်စေချင်ရင်   event တစ်ခုလုံးကို ရပ်ပစ်လိုက်မယ်
+                e.preventDefault();
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
+
+17IE

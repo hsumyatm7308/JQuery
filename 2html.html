@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML</title>
+</head>
+
+<body>
+    <h1>Welcome To jquery-3</h1>
+    <p>This is awesome js libray</p>
+    <button>Click Me</button>
+
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        console.log("hey");
+
+        $(document).ready(function () {
+            console.log("hi");
+            console.log($('h1').html());
+            console.log($("button").html());
+
+            // window.alert($("p").html());
+
+            // sar thar change chin yin value ထည့်လိုက်  
+
+            $('button').click('click', function () {
+                console.log('hey i am working')
+
+                $("h1").html("Hello JQuery");
+
+                $("h1").html("hello <i>JQuery</i>");
+
+                $("h1").html("hello  <i style='color:red'>JQuery</i>");
+
+
+            })
+
+
+        });
+    </script>
+</body>
+
+</html>

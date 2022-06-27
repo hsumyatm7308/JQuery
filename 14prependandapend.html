@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prepend and apend</title>
+</head>
+
+<body>
+
+    <h1>Hello Myanmar</h1>
+    <button type="button" id="prependbtn">Prepend Text</button>
+    <button type="=button" id="appendbtn">Append</button>
+
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+        // prepend tway ka element htal ko winn twor tar 
+        // eg - h1 -prepend text - h1 
+
+        $(document).ready(function () {
+
+            $("#prependbtn").click(function () {
+                // $("#prependbtn").prepend("Greeting Message =");
+                $("h1").prepend("<u>Greeting Message </u> =");
+            });
+
+
+
+            $("#appendbtn").click(function () {
+                // $("#appendbtn").append("Greeting Message =");
+                $("h1").append("<u> Greeting Message </u>=");
+
+            });
+
+
+
+            $("#appendbtn").click(function () {
+
+                // result = no working(cuz mus be inc html tags)
+                // $("hello world").appendTo("h1");
+
+
+                $("<i>hello i </i>").appendTo("h1")
+
+            });
+
+
+
+        });
+    </script>
+</body>
+
+</html>

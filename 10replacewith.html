@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Replace With</title>
+    <style type="text/css">
+        body {
+
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 500px;
+            background-color: #f4f4f4;
+
+            padding: 20px;
+        }
+
+        h2 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Are you ready to learn jQuery ???</h1>
+        <p id="caption">this is jquery version 3.6</p>
+        <button type="button" class="btn"> click me</button>
+    </div>
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+
+
+        $(document).ready(function () {
+            // console.log('hi')
+
+            $("button").click(function () {
+                $("h1").replaceWith("<h2>Welcome to jQuery</h2>")
+            });
+
+
+            $("button").click(function () {
+                $("#caption").replaceWith("<i style='display:block;margin-bottom:20px;'>this is jquery version</i>")
+            });
+
+            $(".btn").click(function () {
+                $(this).replaceWith("<input type='button' value = 'Thanks'>")
+            })
+        });
+    </script>
+</body>
+
+</html>
+
+23RW

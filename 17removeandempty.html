@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Remove and Empty</title>
+
+</head>
+
+<body>
+
+    <div>
+        <h1>Hello Heading Tag H1</h1>
+        <h2>Hello Heading Tag H2</h2>
+        <h3>Hello Heading Tag H3</h3>
+        <h2 class="headingh2">Hello Heading Tag H2</h2>
+        <h1>Hello Heading Tag H1</h1>
+        <span>Hello I am </span>
+    </div>
+
+    <button type="button" id="removebtn">Remove</button>
+    <button id="emptybtn">Empty</button>
+
+    <button id="detachbtn"> Detach</button>
+    <button id="addbtn">Add</button>
+
+
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+        // $(window.document).ready(function(){
+        // console.log("hi")
+        // });
+
+        // jQuery(document).ready(function () {
+        //     console.log(heeeel)
+        // });
+
+        //  jQuery(window.document).ready(function(){
+        //      console.log("hmmmm")
+        //  });
+
+
+
+        $(document).ready(function () {
+            // console.log("hey"); 
+
+            //remove
+            $("#removebtn").click(function () {
+                $("h1,h2").remove();
+            });
+
+            $("#emptybtn").click(function () {
+                $("div").empty();
+            })
+
+
+            $("#detachbtn").click(function () {
+                $("div").detach();
+
+                // remove = detach ( delele all (itself))
+            })
+
+
+
+            //add
+            $("#addbtn").click(function () {
+                $("h2").css({
+                    "background-color": "yellow",
+                    "border": "1px solid black"
+                });
+
+                // $(".headingh2").css({
+                // "background-color": "yellow",
+                // "border": "1px solid black"
+                // });
+
+                // $("h1").add("h2").css({
+                // "background-color": "yellow",
+                // "border": "3px dashed black"
+                // })
+
+
+
+            });
+
+        });
+
+
+        // remove ka the whole tag  ko delete tar 
+        // empty ka chile tway pal delete tar 
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

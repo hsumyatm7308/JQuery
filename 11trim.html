@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trim</title>
+
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            var something = "welcome to JQuery lessons";
+            console.log("Before using trim = " + something);
+
+            //method 1  delete space
+            something = jQuery.trim(something);
+            console.log("After using trim = " + something);
+
+            // method 2 
+            something = $.trim(something);
+            console.log("After using trim = " + something);
+
+
+
+        });
+
+    </script>
+</body>
+
+</html>

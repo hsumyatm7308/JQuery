@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>eq Method</title>
+    <style>
+        body {
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .container {
+            background-color: #e4e4e4;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Hello Myanmar</h1>
+        <h1>Hello Thailand</h1>
+        <h1>Hello Indonesia</h1>
+        <h1>Hello Sirlanka</h1>
+        <h1>Hello Phillines</h1>
+    </div>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("hi");
+
+            console.log("h1");
+            console.log($("h1").eq(0));
+            console.log($("h1").eq(2));
+            console.log($("h1").eq(3));
+
+            // eq ka object နဲ့ထွက်လာတယ် 
+
+            $("h1").eq(1).css({
+                "color": "red",
+                "text-transform": "uppercase",
+                "font-size": "20"
+            });
+
+            $("h1").eq(4).css({
+                "color": "red",
+                "text-transform": "uppercase",
+                "font-size": "20"
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

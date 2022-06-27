@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Attribute adn Removve attr</title>
+
+    <style>
+        body {
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .container {
+            width: 800px;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .text-primary {
+            color: blue;
+        }
+
+        .text-light {
+            color: #ffff;
+        }
+
+
+        .bg-info {
+            background-color: lightblue;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .under-line {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div>
+            <img src="./img/logo.png" alt="logo" width="100px">
+            <h1 id="1" class="text-primary">Hello Myanmar</h1>
+            <h1 id="2"> Hello Thailand</h1>
+            <h1 id="3" class="under-line"> Hello Sirilinkar</h1>
+            <h1 id="4">Hello Indonisa</h1>
+
+        </div>
+
+        <button type="button" id="pri">Text-Primary</button>
+        <button id="bginfo">BG-INfo</button>
+        <button id="txtbg">textlight-bginfo</button>
+
+        <button id="multibtnn">Multi Atr</button>
+
+        <button id="rmbg">Remove Bg-ingo</button>
+        <button id="textcnt">tesxt center</button>
+        <button id="rmclass">Remove textlight</button>
+        <button id="hasclass">Has Clasaa</button>
+        <button id="togclass">Toggle Class</button>
+    </div>
+
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            // console.log("hey")
+
+            // $(selector).attr(attrbute  ,value)
+            $("#pri").click(function () {
+                $("h1").attr("class", "bg-info")
+            });
+
+            // $(selector).attr(attrbute  ,value)
+            $("#bginfo").click(function () {
+                $("h1").attr("class", "text-primary")
+            });
+            // $(selector).attr(attrbute  ,value)
+            $("#txtbg").click(function () {
+                $("h1").attr("class", "text-center bg-info text-light")
+            });
+
+            $("#multibtnn").click(function () {
+                $("img").attr({
+                    alt: "logo2",
+                    width: "150",
+                    src: "./img/logo2.png",
+                    abc: "this is logo ig"
+
+
+                });
+            });
+
+            //removeAttr( )
+            // $("#rmbg").click(function () {
+            //     $("h1").removeAttr("class")
+            // });
+
+            $("#rmbg").click(function () {
+                $("h1").removeAttr("id class")
+            });
+
+
+            // ............................................................................. 
+            $("#textcnt").click(function () {
+                $("h1").addClass("text-center under-line")
+            });
+
+            //removeClass
+            $("#rmclass").click(function () {
+                $("h1").removeClass("text-light bg-info")
+            });
+
+            //hasclass
+            $("#hasclass").click(function () {
+                window.alert($("h1").hasClass("text-center"))
+                // (class shi yin bar lote mal so p thone loh ya tal )
+            });
+
+            // ToggleClass 
+            $("#togclass").click(function () {
+                $("h1").toggleClass("text-center under-line")
+            });
+        });
+    </script>
+</body>
+
+</html>

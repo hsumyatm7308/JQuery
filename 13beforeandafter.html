@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Before and After
+    </title>
+</head>
+
+<body>
+
+    <h1>Hello Myanmar</h1>
+
+    <button type="button" id="before">Before Insert</button>
+    <button type="button" id="after">After Insert</button>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("#before").click(function () {
+                $("h1").before("Save Myanmar");
+            });
+
+            $("#after").click(function () {
+                $("h1").after("<p>Pray Myanmar</p>")
+            });
+
+            // html code can 
+            // non-tag appear (only text appear)
+            // eg= Save myanmar
+            //    <h1></h1> 
+
+        });
+
+
+    </script>
+</body>
+
+</html>

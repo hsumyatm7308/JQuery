@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clone</title>
+</head>
+
+<body>
+
+    <h1>Hello myanmar</h1>
+
+    <div class="container"></div>
+
+
+    <button type="button">Clone</button>
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+
+
+        $(document).ready(function () {
+
+            // clone can copy the whole line 
+            $("button").click(function () {
+
+                // $("h1").clone().appendTo("body");
+
+                // $("h1").clone().appendTo(".container");  //only appendto can
+
+                $("h1").clone().before("body");   //can't
+
+            });
+            //  clone is non-stop copy 
+
+
+        });
+    </script>
+</body>
+
+</html>
