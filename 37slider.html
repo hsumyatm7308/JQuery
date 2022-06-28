@@ -50,6 +50,17 @@
                     <label for="myslider" >Amount</label>
                     <div id="myslider"></div>
                 </div>
+
+
+                <div class="form-group">
+                    <label for="days" >Days :</label>
+                    <input type="text" name="days" id="days" class="form-control" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="term" >Term</label>
+                    <div id="term"></div>
+                </div>
             </form>
         </div>
         <script src="./libs/jquery-3.6.0.min.js"></script>
@@ -71,13 +82,58 @@
                     min:10,
                     max:200,
                     value:100,
-                    step:20
+                    step:20,
+
+
+                    orientation:"vertical",
+
+
+                //     change: function(e,jqui){
+                //     console.log('this is change = ',jqui.value)
+                // },
+
+                start:function(e,jqui){
+                    console.log('this is start = ',jqui.value)
+                },
+
+                // stop:function(e,jqui){
+                //     console.log('this is stop = ',jqui.value)
+                
                 }).css("background-color","steelblue");
 
-
+                        //    span jQuery ka lar tar
                 $("#myslider > span").css({
                     "background-color":"yellow"
-                })
+                });
+
+                // $('#myslider').find("span").css("background-color","red")
+                // $('#myslider').children("span").css("background-color","green")
+
+
+                $("#term").css("background-color","skyblue").slider({
+                    // console.log(e)
+                    slide:function(e,jqui){
+                        // console.log(jqui.values)
+
+                        $("#days").val("from = " + jqui.values[0] + "end day" + jqui.values[1] + "days");
+
+
+                        $("#term").children("span:nth-of-type(1").css("background-color","yellow")
+                        $("#term").children("span:nth-of-type(2)").css("background-color","violet")
+
+                        ('#term > div').css("background-color","skyblue")
+                    },
+
+                    min:7,
+                    max:31,
+                    step:1,
+                    values:[8,20],
+                    range:true
+
+                    })
+
+
+
             });
             </script>
     </body>
