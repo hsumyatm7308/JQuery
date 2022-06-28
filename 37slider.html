@@ -61,7 +61,7 @@
 
                 $('#myslider').slider({
                     slide:function(e,jqui){
-                    //    console.log(e)
+                    //    console.log(e.target)
                     // console.log(jqui)
                     // console.log(jqui.value)
 
@@ -70,9 +70,14 @@
 
                     min:10,
                     max:200,
-                    // value:100,
-                    Step:20
-                });
+                    value:100,
+                    step:20
+                }).css("background-color","steelblue");
+
+
+                $("#myslider > span").css({
+                    "background-color":"yellow"
+                })
             });
             </script>
     </body>
