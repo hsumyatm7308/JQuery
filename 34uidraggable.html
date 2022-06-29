@@ -26,6 +26,13 @@
                 justify-content: center;
                 align-items: center;
             }
+
+            .container{
+                width: 900px;
+                height: 700px;
+                background-color: #f4f4f4;
+                box-shadow: 10px 10px 5px #777;
+            }
         </style>
     </head>
     <body>
@@ -33,6 +40,21 @@
             <div id="dragme" class="box">
                 <p>Drag Me wherever you want</p>
             </div>
+
+
+            <div id="dragmeonx" class="box">
+                <p>Drag Me on X!!!</p>
+            </div>
+
+            <div id="dragmeony" class="box">
+                <p>Drag Me on Y!!!</p>
+            </div>
+
+            <div id="dragmeoncnt" class="box">
+                <p>Drag Me on container only!!!</p>
+            </div>
+
+
         </div>
         <script src="./libs/jquery-3.6.0.min.js"></script>
         <script src="./JQUi/jquery-ui.js"></script>
@@ -41,7 +63,59 @@
                 console.log("hey")
 
 
-                $("#dragme").draggable()
+                // $("#dragme").draggable();
+                $("#dragme").draggable({
+                    // cursor:"grab"
+                    // cursor:"move"
+                    // cursor:"crosshair"
+                });
+
+                // $("#dragmeonx").draggable({
+                //     axis:"x"
+                // });
+
+                
+                $("#dragmeony").draggable({
+                    axis:"y"
+                });
+
+                $("#dragmeoncnt").draggable({
+                   containment:".container"
+                });
+
+                $("#dragme,#dragmeoncnt").draggable({
+                    cancel:"#dragmeoncnt"
+                });
+
+                $("#dragmeonx").draggable({
+                   start:function(){
+                    $(this).css("background-color","violet");
+                   },
+
+                   drag:function(){
+                    $(this).text("im moving");
+                   },
+
+                   stop:function(){
+                    $(this).text("I'm stop");
+                   },
+
+                //    revert:true,
+                //    revertDuration:2000
+
+                revert:function(){
+                    $(this).css("background-color","red");
+                    return true
+                },
+
+                revertDuration:1000, 
+
+                // grid:[0,100]
+                // grid:[100,0]
+                grid:[100,200]
+
+                });
+
             });
         </script>
     </body>
