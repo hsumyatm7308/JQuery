@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ui Dialog Method</title>
+        <link rel="stylesheet" href="./JQUi/jquery-ui.css">
+    </head>
+    <body>
+
+        <div title="How to use jQuery Ui" class="dbox">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus facilis assumenda autem, dolores recusandae voluptate dolorum. Est incidunt minima, dignissimos placeat et officiis hic quisquam quae fugiat officia ad inventore.</p>
+
+        </div>
+        <button class="btn">Click Me</button>
+        <button class="tgbtn">Toggle Me</button>
+
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script src="./JQUi/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function(){
+            $(".dbox").dialog({
+                autoOpen:false,
+                width:500,
+                height:300,
+                title:"Are you ready to us jq",
+                hide:"slideUp", //slide slideUp
+                show:"slideDown" ,//slide slideDown
+                position:{
+                    // at:"left",
+                    // at:"top",
+                    // at:"left bottom",
+                    // at :"left top",
+                    // at : "right",
+                    // at :"right top",
+                    // at :"right bottom",
+                    // at : "top",
+                    at :"bottom"
+                }
+            }).css({
+                "background-color":"grey",
+                "color":"#fff"
+            });
+
+            // // for box 
+            // $(".dbox").parent().css({
+            //     "background-color":"orange"
+            // });
+
+            // for title 
+            $(".dbox").siblings("div:nth-of-type(1)").css({
+                "background-color":"skyblue"
+            });
+
+            // for button 
+            $(".dbox").siblings("div:nth-of-type(1)").find("button").css({
+                "background-color":"orange"
+            });
+
+            // for click me button 
+            // $('.btn').click(function(){
+            //   $(".dbox").dialog({
+            //     autoOpen:true
+            //   })
+            // });
+
+
+            $('.btn').click(function(e){
+              $(".dbox").dialog("open"),
+              console.log(e.target)
+              
+            });
+
+            $('.tgbtn').click(function(){
+                $(".dbox").dialog("isOpen") ===false ? $(".dbox").dialog("open") : $(".dbox").dialog("close");
+            });
+            
+            });
+        </script>
+    </body>
+</html>
