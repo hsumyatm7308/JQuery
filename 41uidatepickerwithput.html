@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ui Date Piceker Witth Put</title>
+        <link rel="stylesheet" href="./JQUi/jquery-ui.css">
+
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+                width: 900px;
+                background-color: #f4f4f4f4;
+                padding: 20px;
+            }
+
+            .form-group{
+                padding: 10px 0;
+            }
+
+            .form-group label{
+                display: block;
+                font-size: 20px;
+                margin-bottom:20px ;
+            }
+            .form-control{
+                width: 100%;
+                font-size: 20px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        
+
+        <div class="container">
+            <form action="" method="">
+
+                <div class="form-group">
+                    <label for="arrival">Arrival Date :</label>
+                    <input type="text" name="arrival" id="arrival" class="form-control" readonly>
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="bookingstart">Booking Start Date :</label>
+                    <input type="text" name="arrival" id="bookingstart" class="form-control" readonly>
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="bookingend">Booking End Date :</label>
+                    <input type="text" name="arrival" id="bookingend" class="form-control" readonly>
+                </div>
+            </form>
+        </div>
+ 
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script src="./JQUi/jquery-ui.js"></script>
+       <script>
+        $(document).ready(function(){
+
+           $("#arrival").datepicker(
+            {
+                // numberOfMonths:3
+                numberOfMonths:[2,2],
+                // showAnim:"slide",
+                showAnim:"slideDown",
+                // duration:2000,
+                duration:'slow',
+                dayNamesMin:['SUN','MON','TUE','WED','THU','FRI','SAT'],
+
+                // changeMonth:true,
+                // changeYear:true
+
+                // minDate:0, //start from today, today is index number 0
+
+                // maxDate:5 // next 5 day
+
+                minDate:'07/02/2022',
+                maxDate:'08/05/2022',
+
+            }
+           );
+
+           $("#bookingstart").datepicker(
+            {
+                numberOfMonths:1,
+                showAnim:'slideDown',
+                dateFormat:"dd-mm-yy",
+                                    
+                                 //end ka nay choose tae har
+                onClose:function(selectdate){
+                                                    // first param - object 
+                    $("bookingsend").datepicker("option","minDate",selectdate)
+                }
+            }
+           )
+
+           $("#bookingend").datepicker(
+            {
+                numberOfMonths:1,
+                showAnim:'slide',
+                dateFormat:"dd-mm-yy",
+
+                onClose:function(selectdate){
+                    $("bookingstart").datepicker("abc","maxDate",selectdate)
+        }
+            
+            }
+           )
+          
+        //    datepicker thone yin type ka  "text "
+        });
+       </script>
+    </body>
+</html>
