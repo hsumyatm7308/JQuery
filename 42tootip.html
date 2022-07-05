@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tooltip</title>
+        <link rel="stylesheet" href="./JQUi/jquery-ui.css">
+
+        <style>
+            body{
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+                width: 900px;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+
+            <h3>How to use JQuery Tooltips</h3>
+            <p> <a href="#" id="ttone" title="this is tooltip"> it is used </a> in conjuctin with a cursor, when a user hovers the pointer over an item without clicking</p>
+            
+        </div>
+        
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script src="./JQUi/jquery-ui.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#ttone").tooltip({
+                // show:3000,
+                // hide:5000
+
+                // show:"bounce",
+                // hide:"explode"
+
+                hide:{
+                    effect:"explode",
+                    duration:3000
+                },
+
+                show:{
+                    effect:"shake",
+                    duration:2000
+                },
+
+                track:true,
+
+                // content:"This is jQuery Yi"
+
+                content: function(){
+                    // return "<img src='./img/logo1.png' width='150px' />"
+
+                    return "<img src='./img/logo1.png' width='150px' /> <h5> This is our cokmpany </h5>  <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At eligendi adipisci quis, repellat ipsam id ullam, nesciunt cumque quod, perferendis quibusdam a. Temporibus magnam vero vel saepe maxime accusantium repudiandae! </small>"
+                }
+
+            });
+        })
+
+    
+        </script>
+    </body>
+</html>
+
+
+<!-- 5TT  -->
