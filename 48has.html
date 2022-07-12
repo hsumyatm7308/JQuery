@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>;Has() Selector</title>
+        <style>
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+                width:1200px;
+                background-color: #f4f4f4;
+
+                padding:20px ;
+                display: flex;
+                
+            }
+
+            .box{
+                width: 200px;
+                height: 200px;
+                background-color: steelblue;
+                margin: 0 10px;
+            }
+        </style>
+        
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class=" box box1">Box 1</div>
+            <div class=" box box2"><p>Box 2</p></div>
+
+            <div class=" box box3">Box 3</div>
+            <div class=" box box4">Box 4</div>
+            <div class=" box box5">Box 5</div>
+            
+
+        </div>
+
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                console.log('hi')
+
+                // :has() 
+
+                // $(':has(.box3)').css('background','green')  //color filled to html
+                // $('div:has(.box3)').css('background','green')  //color filled to container
+                // $('div:has(p)').css('background','green')  //color filled to container
+
+                $('div:has(p)').text('hey i am here')  //color filled to container
+
+
+
+
+
+            });
+        </script>
+    </body>
+</html>

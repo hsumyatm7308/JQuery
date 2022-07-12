@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>:empty & :not( Selector</title>
+
+        <style>
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .box{
+                width: 200px;
+                height: 100px;
+
+            }
+        </style>
+    </head>
+    <body>
+        
+
+        <div class="container">
+            <h1>My Fav Color</h1>
+
+            <ul>
+                <li>Red</li>
+                <li>Green</li>
+                <li>Blue</li>
+                <li></li>
+                <li>Pink</li>
+                <li>White </li>
+                <li></li>
+                <li>Violet</li>
+            </ul>
+            <hr>
+            <ol>
+                <li>Apple</li>
+                <li>Orange</li>
+                <li></li>
+                <li></li>
+                <li>Mango</li>
+                <li>White </li>
+                <li></li>
+                <li>Peach</li>
+            </ol>
+        
+
+            <hr>
+            <div>
+                <p class="box"></p>
+
+                <p>Hello i am p tag. inside of div</p>
+
+                <p></p>
+            </div>
+
+            <div class="box"></div>
+            <p class="box"></p>
+        </div>
+
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+
+                //:empty
+                // $(":empty").css("background-color","steelblue")
+                // $("ul li:empty").css("backgroung-color","steelblue")
+
+                // $("ol li:empty").css("background-color","steelblue")
+
+                // $("p").css("background-color","orange")
+                // $("p:empty").css("background-color","orange")
+
+
+                // // :not() = selector 
+                // $("li:not(ol li)").css("background-color","violet");
+                // $("li:not(Ul li)").css("background-color","pink");
+
+                    //  all      ul>li 
+                // $("li:not(ul li:empty)").css("background-color","violet");
+
+                $("li:not(:empty)").css("background-color","orange");
+            });
+        </script>
+    </body>
+</html>

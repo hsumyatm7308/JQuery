@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First And Last Selector</title>
+
+        <style>
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+           
+        </style>
+    </head>
+    <body>
+        
+
+        <div class="container">
+            <h1>My Fav Color</h1>
+
+            <ul>
+                <li>Red</li>
+                <li>Green</li>
+                <li>Blue</li>
+                <li></li>
+                <li>Pink</li>
+                <li>White </li>
+                <li></li>
+                <li>Violet</li>
+            </ul>
+            <hr>
+            <ol>
+                <li>Apple</li>
+                <li>Orange</li>
+                <li></li>
+                <li></li>
+                <li>Mango</li>
+                <li>White </li>
+                <li></li>
+                <li>Peach</li>
+            </ol>
+        
+
+            <hr>
+           
+        </div>
+
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+
+            //    :first 
+            // $("ul li:first").css("background-color","orange")
+            $("ul li:last").css("background-color","orange")
+
+
+            });
+        </script>
+    </body>
+</html>
