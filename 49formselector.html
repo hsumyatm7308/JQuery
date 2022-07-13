@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Selector</title>
+        <style>
+
+            *{
+                box-sizing: border-box;
+
+            }
+
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+               width: 900px;
+               background-color: #f4f4f4;
+               pad: 20px;
+            }
+
+            .form-group{
+                margin:10px 0;
+            }
+
+            .form-group label{
+                display:block;
+                margin-bottom:5px;
+            }
+
+            .form-control{
+                width: 100%;
+            }
+
+            .form-check{
+                display: flex;
+            }
+        </style>
+
+    </head>
+    <body>
+        <di class="container">
+
+            <img src="./img/logo.png" alt="logo1"> 
+            <!-- :image selector does not work for img tab s -->
+
+            <div class="container">
+                <form action="" method="" enctype="multipart/form-data">
+                    <div>
+                        <input type="image" src="./img/logo.png">
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname">First Name</label>
+                        <input type="text" name="firstname" id="firstname" class="form-control" autocomplete="off">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" name="lastname" id="lastname" class="form-control" autocomplete="off" disabled>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" class="form-control" autocomplete="off">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="password">password</label>
+                        <input type="password" name="password" id="password" class="form-control" autocomplete="off" disabled>
+                    </div>
+
+                    <div class="form-group form-check">
+                        <label>Fac Color</label>
+                        <input type="checkbox" name="favcolor" id="favcolorred" class="form-check-input" value="red"checked><label for="favcolorred">Red</label>
+                        <input type="checkbox" name="favcolor" id="favcolorgreen" class="form-check-input" value="green"> <label for="favcolorgreen"> Green</label>
+                        <input type="checkbox" name="favcolor" id="favcoloryel" class="form-check-input" value="yellow"><label for="favcoloryel">Yellow</label>
+
+
+
+                    </div>
+
+                    <div class="form-group form-check">
+                        <label>Gender</label>
+                        <input type="radio" name="gender" id="genderm" class="form-check-input" value="1">
+                        <input type="radio" name="gender" id="genderf" class="form-check-input" value="0"> 
+
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select name="country" id="country" class="form-control">
+                            <option selected disabled>Choose Your Country</option>
+                            <option value="mm">Myanmar</option>
+                            <option value="th">Thailand</option>
+                            <option value="ido">indonesia</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nrc">NRC</label>
+                        <input type="file" name="nrc" id="nrc" class="form-control">
+                    </div>
+
+                    <input type="reset" class="btn" value="Reset">
+                    <button type="submit">Submit</button>
+
+
+    
+    
+                    
+                </form>
+            </div>
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+
+            $(document).ready(function(){
+                // console.log('hi')
+                //   input tag(not include btn )
+                $('input').css({
+                    "background":"yellow",
+                    "border":"2px solid red"
+                })
+
+                // include btn 
+                $(':input').css({
+                    "background":"yellow",
+                    "border":"2px solid red"
+                })
+
+                // :text()
+                $(':text').css({
+                    "background":"yellow",
+                    "border":"2px solid red"
+                })
+
+                $(':password').css({
+                    "background":"yellow",
+                    "border":"2px solid red"
+                })
+
+
+                $(':checkbox').css({
+                   "accent-color":"red"
+                })
+
+                $(':radio').css({
+                   "accent-color":"red"
+                })
+
+
+
+                // IMPORTANT 
+
+
+                // :checked for checkbox 
+                // $("input[type=checkbox]").click(function(){
+                //     if($(this).is(":checked")){
+                //         console.log("favcolor checked")
+                //     }else{
+                //         console.log("not yet checked")
+                //     }
+                // })
+
+                // $("input[type=checkbox]").click(function(){
+                //     if($(this).is(":checked")){
+                //         console.log("favcolor checked")
+                //     }else{
+                //         console.log("not yet checked")
+                //     }
+                // });
+
+                $("input[type=checkbox]").click(function(){
+                   if($(this).val()==="red"){
+                    console.log($(this).is(":checked") ? "Yes Fave color" : "Sorry not fav color");
+                   }else if($(this).val()==="green"){
+                    console.log($(this).is(":checked") ? "Yes Fave color" : "Sorry not fav color");
+
+                   }else if($(this).val()==="yellow"){
+                    console.log($(this).is(":checked") ? "Yes Fave color" : "Sorry not fav color")
+
+                }
+                });
+
+
+
+
+                // // checked for radio 
+                // $('input[type=radio]').click(function(){
+                //     if($("input[name=gender]").is(":checked")){
+                //       console.log('gender checked')
+                //     }
+                // })
+
+                $('input[type=radio').click(function(){
+                    if($(this).val()==="1"){
+                        console.log("i am male");
+
+                    }else{
+                        console.log('i am female')
+                    }
+                })
+
+                // :selected 
+                $("#country").change(function(){
+                //    var getcountry = $(this);
+                //    console.log(getcountry.val());
+                //    console.log(getcountry.text());
+
+                //    var getcountry = $(":selected");
+                //    var getcountry = $('#country :selected')
+                var getcountry = $('#country option:selected')
+                   console.log(getcountry.val());
+                   console.log(getcountry.text())
+                });
+
+
+                //:file
+
+                $(":file").css({
+                    "background-color":"yellow",
+                    'border':'1px dashed red'
+                })
+
+
+                $(":image").css("width","46px");
+
+
+                // :reset 
+                $(":reset").css("background","orange")
+                $(":reset").click(function(e){
+                    console.log("helo ia m reset button")
+                    e.preventDefault();
+                })
+
+
+                $(":submit").css("background","orange")
+                $(":submit").click(function(e){
+                    console.log("helo ia m submit button")
+                    e.preventDefault();
+                })
+                                
+
+            });
+        </script>
+    </body>
+</html>
+
+
+<!-- 12FC  -->
+
+<!-- 13BT  -->
