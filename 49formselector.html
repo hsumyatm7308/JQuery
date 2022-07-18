@@ -45,13 +45,13 @@
     <body>
         <di class="container">
 
-            <img src="./img/logo.png" alt="logo1"> 
+            <!-- <img src="./img/logo.png" alt="logo1">  -->
             <!-- :image selector does not work for img tab s -->
 
             <div class="container">
                 <form action="" method="" enctype="multipart/form-data">
                     <div>
-                        <input type="image" src="./img/logo.png">
+                        <!-- <input type="image" src="./img/logo.png"> -->
                     </div>
                     <div class="form-group">
                         <label for="firstname">First Name</label>
@@ -107,13 +107,23 @@
                         <input type="file" name="nrc" id="nrc" class="form-control">
                     </div>
 
-                    <input type="reset" class="btn" value="Reset">
-                    <button type="submit">Submit</button>
+               
 
-
+                    <div class="form-group">
+                        <span title="formember">Already Register??? </span><a href="#" id="loginlink" title="formember">Login Here!!!</a>
+                        <p title="forthx">Thank you for paying attention</p>
+                    </div>
     
     
+                    <div class="form-group form-check">
+                        <input type="checkbox" name="agree" class="form-check-input">
+                        <label for="agree">I agreed all above regulation</label>
+                    </div>
                     
+
+                    <input type="reset" class="btn" value="Reset">
+                    <button type="submit" class="btn" disabled>Submit</button>
+
                 </form>
             </div>
         <script src="./libs/jquery-3.6.0.min.js"></script>
@@ -244,7 +254,32 @@
                     console.log("helo ia m submit button")
                     e.preventDefault();
                 })
-                                
+                          
+                
+                // $("[id]").css("color","red");
+                // $("[class]").css("color","red");
+                // $("[title]").css("color","red");
+
+                $("a[title='formember']").css("color","steelblue");
+
+
+                // $("span[title]").css("color","red");
+                // $("a[title]").css("color","steelblue");
+                // $("span[title]").css("color","steelblue");
+
+                $("p[title='forthx']").css("color","steelblue");
+
+                // for agree 
+                $('#agree').click(function(){
+
+                    if($(this).is(":checked")){
+                        $("[type='submit']").removeAttr('disabled');
+                    }else{
+                        // $('[type="submit"]').attr("disabled",true)
+                        $('[type="submit"]').attr("disabled","disabled")
+                    }
+                })
+
 
             });
         </script>
