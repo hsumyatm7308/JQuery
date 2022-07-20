@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SMS Template Single </title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+                width: 500px;
+                background-color: #f4f4f4f4;
+                padding: 10px;
+            }
+
+            .form-group{
+                margin: 10px 0;
+
+            }
+
+            .form-control label{
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .form-control{
+                width: 100%;
+            }
+
+            .justify-content-end{
+                display: flex;
+                justify-content: end;
+            }
+
+            #message{
+
+                resize: none; 
+                /* resize: horizontal; */
+                /* resize: vertical; */
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+
+            <form action="" method="">
+                <div class="form-group">
+                    <label for="number">lMObile Number (FA Number)</label>
+                    <input type="text" name="number" id="number" class="form-control" placeholder="09123456789">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" class="form-control" rows="5" placeholder="Enter your sms" disabled></textarea>
+                        <span id="charcounts">100 chaacters are ramining.</span> <span> (<b id="totalsms" >0</b>/5)</span>
+                </div>
+
+                <div class="form-group justify-content-end">
+                    <button type="submit" disabled>Send</button>
+                </div>
+            </form>
+
+        </div>
+        
+
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+
+                $('#message').attr('maxlength',100);
+                var maxlength = $('#message').attr('maxlength');
+
+                $("#charcounts").text(maxlength + "characters are remaining.");
+
+
+                $("#number").keyup(function(){
+
+                    if($.trim($(this).val()) !== " " && $.trim($(this).val().length) >= 9 ){
+                        $("#message").removeAttr("disabled");
+                    }else{
+                        $('#message').attr('disabled',true);
+                        $("[type=submit]").attr("disabled",true);
+
+                    }
+
+                });
+
+
+                $('#message').keyup(function(){
+
+                    var getsmslength = $(this).val().length;
+                    // console.log(getsmslength); 
+
+                    var remainingchars = maxlength - getsmslength;
+
+                    $('#charcounts').text(remainingchars + "characters are remaing")
+
+                    if(getsmslength === 0){
+                        $("#totalsms").text("0");
+                    }else if(getsmslength <= 20){
+                        $("#totalsms").text("1");
+                    }else if(getsmslength <= 40){
+                        $("#totalsms").text("2");
+                    }else if(getsmslength <= 60){
+                        $("#totalsms").text("3");
+                    }else if(getsmslength <= 80){
+                        $("#totalsms").text("4");
+                    }else{
+                        $("#totalsms").text("5");
+                    }
+
+
+                    if($.trim($(this).val()) !== " " ){
+                    $('[type=submit]').removeAttr('disabled');
+
+                }else{
+                    $('[type=submit]').attr('disabled',true);
+                };
+                });
+
+
+
+               
+
+
+                $("form").submit(function(e){
+                    var getdatas = {
+                        Number: $("#number").val(),
+                        message: $('#message').val()
+                    }
+
+                    e.preventDefault();
+                })
+            });
+        </script>
+    </body>
+</html>
+
+<!-- Bulk Sms = a myar poh tar  -->
+
+<!-- inbond sms   =  အဝင်သီးသန့်-->
+<!-- outbond sms  = ကိုယ်ကပဲ ပို့လို့ရ-->
+
+
+<!-- DIA nameingရှီတယ်  - ဖုန်းနံပါတယ် တစ်ခုနဲ့ ထွက်သွားမှာ  -DDI sevice ဝယ်ရင် ကိုယ့်နာမည်နဲ့ ထွက်လိမ့်မယ်ျ -->
+
+ <!-- - ပထမ platform  -->
+ <!-- - key လေးတွေရလာမှာ  -->
+ <!-- ဘယ်လိုယူမှာလဲ ဆို reactနဲ့ ရေးရင် သူက သက်ဆိုင်ရာ ထုတ်ပေးလိမ့်မယ်   -->  
