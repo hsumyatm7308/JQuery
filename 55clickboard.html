@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clickboard</title>
+        <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 500px;
+            background-color: #f4f4f4f4;
+            padding: 10px;
+        }
+
+        .form-group label{
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group{
+            margin-bottom: 10px;
+        }
+
+        .form-control{
+            width: 100%;
+            
+        }
+
+        .justify-content-end{
+            display: flex;
+            justify-content: end;
+        }
+
+
+        /* Start tooltip  */
+        .tooltip{
+            position: relative;
+        }
+
+        .tooltip .tooltiptext{
+            width: 150px;
+            background-color: #555;
+            color: #fff;
+            border-radius: 6px;
+            padding: 5px;
+
+            position: absolute;
+            left: 50%;
+            bottom: 150%;
+
+            margin-left: -75px;
+            /* z-index: 10; */
+            transition: opacity .5s;
+
+            z-index: 1;
+            /* visibility: hidden; */
+            opacity: 0;
+        }
+
+
+        .tooltip .tooltiptext::after{
+            content: "";
+            
+
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+
+            position:absolute;
+            left: 50%;
+            top: 100%;
+
+            margin-left: -2.5px;
+
+        
+
+        }
+
+        .tooltip:hover .tooltiptext{
+            /* visibility: visible; */
+            opacity: 1;
+        }
+        
+        /* End Tooltip  */
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form action="" method="">
+                <div class="form-group">
+                    <label for="link">Get Link</label>
+                    <input type="text" name="link" id="link" class="form-control">
+                </div>
+
+                <div class="justify-content-end">
+                    <button type="submit" class="btn tooltip" title="">
+                        <span class="tooltiptext" id="mytooltip">Copy to clipboard</span> copy url
+                    </button>
+                </div>
+            </form>
+        </div>
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+
+            $(document).ready(function(e){
+            //   console.log("hi")
+
+              $('.btn').click(function(e){
+
+                console.log('i am working')
+
+                var getinput = $('#link');
+
+                getinput.select();
+
+                navigator.clipboard.writeText(getinput.val());
+
+                $("#mytooltip").text("Copied "+ getinput.val().substring(0,15)+"..")
+                e.preventDefault();
+              })
+            });
+        </script>
+    </body>
+    
+</html>
+
+<!-- 26WOW  -->
