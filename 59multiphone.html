@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multi Phone</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+
+                width: 500px;
+                padding: 15px;
+
+            }
+
+            .form-control{
+                width: 80%;
+                font-size: 14px;
+                margin: 5px 0;
+                padding: 10px;
+            }
+
+            .addbtn{
+                text-decoration: none;
+                background-color: green;
+                color: #fff;
+                font-size: 12px;
+                padding: 8px 10px;
+                border-radius: 5px;
+                margin: 0 5px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <div class="container">
+            <h3>Multi phone number</h3>
+
+            <form action="" method="">
+                <div class="form-group phone-number">
+                    <input type="text" name="phones[]" id="phones" class="form-control" ><a href="javascript:void(0);" class="addbtn"><li class="fas fa-plus"></li></a>
+
+                </div>
+            </form>
+
+        </div>
+        
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+             console.log("hia")
+
+             var maxnumber = 5;
+             var addbtn = $(".addbtn");
+             var phonebox = $(".phone-number")
+
+             //Add
+             $(addbtn).click(function(){
+                console.log("working")
+             })
+            });
+        </script>
+    </body>
+</html>
+<!-- 1MT -->

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data And Remove Data</title>
+        <style>
+            body{
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+                width: 900px;
+                background-color: #f4f4f4f4;
+                padding: 20px;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+            <div>
+                <h3>Student Data</h3>
+            </div>
+
+            <ul>
+                <li>Name : <span data-name="Mr.June">???</span></li>
+                <li>Age : <span data-age="25">???</span></li>
+                <li>Phone : <span data-phone-number="09952898008">???</span></li>
+            </ul>
+
+            <div>
+                <button type="button" class="newcaption-btn">New Caption</button>
+                <button type="button" class="removecaption-btn">Remove Caption</button>
+                <button type="button" class="showinfo-btn">ShowInfo Caption</button>
+                <button class="attrid" data-id="123456"> Arrtibute</button>
+                <button class="dataid" data-id="654321">Data</button>
+
+            </div>
+        </div>
+        
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                console.log("hi");
+                $(".newcaption-btn").click(function(){
+                                            //   attribute , customer info 
+                 var setnewcap = $("div").data("newcaption","Customer Info");
+                 var getnewcap = $("div").data("newcaption")
+
+                 $("h3").text(getnewcap)
+                });
+
+                $('.removecaption-btn').click(function(){
+                    console.log("Before removeData =", $('div').data("newcaption"))
+
+                    $('div').removeData('newcaption');
+
+                    console.log("After removecaption",$("div").data("newcaption"))
+                })
+
+                $('.showinfo-btn').click(function(){
+
+                    // $("ul li:first span").text("Ko Kyaw")
+                    // console.log("ul li:first span").attr("name")
+                                                        //    data ko call sa ya ma lo 
+                    var getname = $("ul li:first span").data("name")
+                    var getage = $("ul li:nth-child(2) span").data("age");
+                    var getphone = $("ul li:last span").data("phone-number");
+
+                    console.log(getname,getage,getphone);
+                    console.log(typeof getname, typeof getage , typeof getphone)
+
+                    $("ul li:first span").text(getname);
+                    $("ul li:nth-child(2) span").text(getage);
+                     $("ul li:last span").text(getphone);
+                })
+
+                $(".attrid").click(function(){
+                      var getattrid = $(this).attr("data-id")
+                      console.log(getattrid)
+                      console.log(typeof getattrid) // will return the number 123456 by string from attribute
+                })
+
+                $(".dataid").click(function(){
+                      var getdataid = $(this).data("id")
+                      console.log(getdataid)
+                      console.log(typeof getdataid) //will return the number 654321 by number from attribute
+
+                      $(this).data("id","54321")
+                      getdataid = $(this).data("id")
+                      console.log(getdataid, typeof getdataid) // willl return the string 54321 by string form overwrite
+                })
+            })
+        </script>
+    </body>
+</html>
+
+<!-- a paw ka attribute ko pyan call thone loh ya tal  -->
+
+<!-- data ka scope ta khu chin si   ho poh d poh loh ya b  -->
