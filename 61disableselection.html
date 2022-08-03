@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Disable Selection</title>
+
+    </head>
+    <body>
+
+        <div id="box1">
+            <h3>JQuery Extension Function</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, architecto exercitationem ut voluptates earum possimus at accusantium ab laborum voluptas modi animi, consectetur recusandae blanditiis. Iure quia voluptatibus mollitia recusandae.</p>
+
+        </div>
+        
+        <div id="box2">
+            <h3>JQuery Extension Function</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, architecto exercitationem ut voluptates earum possimus at accusantium ab laborum voluptas modi animi, consectetur recusandae blanditiis. Iure quia voluptatibus mollitia recusandae.</p>
+
+        </div>
+
+        <div id="box3">
+            <h3>JQuery Extension Function</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, architecto exercitationem ut voluptates earum possimus at accusantium ab laborum voluptas modi animi, consectetur recusandae blanditiis. Iure quia voluptatibus mollitia recusandae.</p>
+
+        </div>
+        
+        <script src="./libs/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+              
+                jQuery.fn.extend({
+                    disableselectionbox1:function(){
+                        return this.css("user-select","none")
+                    },
+
+                    Selectionbox2:function(){
+                        return this.css({
+                            "background-color":"green",
+                            "color":"#fff"
+                        })
+                    }
+                });
+
+                $("#box1").disableselectionbox1();
+                $("#box2").Selectionbox2();
+
+                 jQuery.fn.disableselectionbox3 = function(){
+                    return this.css("user-select","none")
+                }
+                $("#box3").disableselectionbox3();
+            })
+        </script>
+    </body>
+</html>

@@ -38,6 +38,8 @@
                 <button type="button" class="showinfo-btn">ShowInfo Caption</button>
                 <button class="attrid" data-id="123456"> Arrtibute</button>
                 <button class="dataid" data-id="654321">Data</button>
+                <button class="objbtn"  >Object</button>
+                <button class="inc-btn" id="hay" data-id="1">In Id</button>
 
             </div>
         </div>
@@ -93,6 +95,47 @@
                       $(this).data("id","54321")
                       getdataid = $(this).data("id")
                       console.log(getdataid, typeof getdataid) // willl return the string 54321 by string form overwrite
+                })
+
+                $(".objbtn").click(function(){
+                    $("div").data("info",{
+                        objname:"Ms.July",
+                        objage:35,
+                        objphone:"0987665544"
+                    });
+
+                    $("ul li span:eq(0)").text($("div")).data("info").objname;
+                    $("ul li span:eq(1)").text($("div")).data("info").objage;
+                    $("ul li span:eq(2)").text($("div")).data("info").objphone;
+
+                });
+
+                $(".inc-btn").click(function(){
+                //   var getidmethod = $(this).data("id");
+
+                //   method 2 
+                // var getidmethod = $(this).data().id;
+                // console.log(getidmethod);
+
+                // var getidmethod = $(this).data()["id"]
+                // console.log(getidmethod);
+
+                // var  increasemethod = $(this).data("id");
+                // console.log(increasemethod)
+                // increasemethod++;
+                // $(this).data("id",increasemethod)
+
+                // var increasemethod2 =$(this).data().id++;
+                // console.log(increasemethod2);
+
+                // var increasemethod3 = $(this).data()["id"]++;
+                // console.log(increasemethod3)
+
+                var increasemethod3 = $(this).data()["id"];
+                console.log(increasemethod3)
+                increasemethod3 += 1;
+                $(this).data("id",increasemethod3)
+
                 })
             })
         </script>

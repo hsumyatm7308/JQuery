@@ -21,6 +21,10 @@
 
             }
 
+            .form-group label{
+                display: block;
+            }
+
             .form-control{
                 width: 80%;
                 font-size: 14px;
@@ -28,7 +32,7 @@
                 padding: 10px;
             }
 
-            .addbtn{
+            .addbtn,.removebtn{
                 text-decoration: none;
                 background-color: green;
                 color: #fff;
@@ -38,6 +42,13 @@
                 margin: 0 5px;
             }
 
+            .removebtn{
+                background-color: red;
+            }
+
+            .disabled{
+                background-color: grey;
+            }
         </style>
 
     </head>
@@ -48,9 +59,12 @@
 
             <form action="" method="">
                 <div class="form-group phone-number">
+                    <label for="phones">Mobile Phone</label>
                     <input type="text" name="phones[]" id="phones" class="form-control" ><a href="javascript:void(0);" class="addbtn"><li class="fas fa-plus"></li></a>
 
                 </div>
+
+               
             </form>
 
         </div>
@@ -62,13 +76,43 @@
 
              var maxnumber = 5;
              var addbtn = $(".addbtn");
-             var phonebox = $(".phone-number")
+             var phonebox = $(".phone-number");
+             var newphoneel;
+             var x = 1;
+
 
              //Add
              $(addbtn).click(function(){
-                console.log("working")
+                console.log("working");
+
+                if(x < maxnumber){
+                    x++;
+                    newphoneel = ` <div>
+                  
+                    <input type="text" name="phones[]" id="${x}" class="form-control" ><a href="javascript:void(0);" class="removebtn"><li class="fa fa-trash-alt"></li></a>
+
+                </div>`
+
+                $(phonebox).append(newphoneel);
+                }else{
+                  $(this).addClass("disabled")
+                    
+                }
              })
-            });
+         
+
+            //Remove
+            // click only work Element on document
+            $(phonebox).on("click",".removebtn",function(){
+                console.log("hey hey");
+                $(this).parent('div').remove();
+                x--;
+
+                if(x < 5){
+                    $(addbtn).removeClass("disabled")
+                }
+            })
+        });
         </script>
     </body>
 </html>
